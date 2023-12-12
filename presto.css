@@ -11,6 +11,7 @@ body{
     background-color: grey;
     position: fixed;
     top: 0;
+    z-index: 1;
 }
 .navbar h1{
     color: white;
@@ -29,17 +30,22 @@ body{
     margin: 1vh;
     top: -2vh;
 }
+.div-btn-registrati{
+    position: relative;
+    left: 5vw;
+    top: -2.5vh;
+}
 .btn-registrati{
     background-color: black;
     padding: 1vh;
-    border-radius: 10%;
+    border-radius: 10px;
     transition: font-size 0.5s;
 }
 .btn-registrati:hover{
     font-size: 2.5vh;
     cursor:pointer;
 }
-h2{
+.risultati{
     color: white;
     font-size: 5vh;
     position: relative;
@@ -49,29 +55,31 @@ h2{
 .div-main{
     position: relative;
     top: 15vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 .card {
     width: 300px;
     border: 1vh solid grey;
     border-radius: 8px;
-    overflow: hidden;
     margin: 20px;
     display: flex;
     flex-direction: column;
-
+    flex: 0 0 calc(30% - 20px);
 }
 
 .card-content {
     padding: 15px;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
 }
 
 .card-title {
     font-size: 3vh;
-    top: 1vh;
+    color: white;
     font-weight: bolder;
-    left: -6vh;
 }
 
 .card-price {
