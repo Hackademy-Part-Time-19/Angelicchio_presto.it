@@ -3,6 +3,7 @@ function injectCard(imgSrc, nomeProdotto, prezzoProd){
     card.className = 'card';
 
     var img = document.createElement('img');
+    img.className = 'card-img'
     img.src = imgSrc;
     img.alt = 'Product Image';
 
@@ -15,7 +16,7 @@ function injectCard(imgSrc, nomeProdotto, prezzoProd){
 
     var prezzo = document.createElement('p');
     prezzo.className = 'card-price';
-    prezzo.textContent = prezzoProd;
+    prezzo.textContent = prezzoProd+'€';
 
     var button = document.createElement('a');
     button.className = 'buy-button';
@@ -33,6 +34,23 @@ function injectCard(imgSrc, nomeProdotto, prezzoProd){
     divMain.appendChild(card);
 }
 
-for(var i = 0; i<6; i++){
-    injectCard('./Senza titolo.jpg', 'nome prodotto', 200);
+function aggiungiProdotti(){
+    fetch("https://fakestoreapi.com/products")
+        .then((response) =>{return response.json()})
+        .then(data => {
+            let immagine;
+            let prodotto;
+            let prezzo;
+            for(let i = 0; i<data.length; i++){
+                immagine = data[i].image;
+                prodotto = data[i].title;
+                prezzo = data[i].price;
+                injectCard(immagine, prodotto, prezzo);
+            }
+        })
+        .catch(error =>{
+            console.log(error);
+        })
 }
+
+aggiungiProdotti();

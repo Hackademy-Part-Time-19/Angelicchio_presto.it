@@ -8,10 +8,11 @@ body{
 .navbar{
     height: 10vh;
     width: 100%;
-    background-color: grey;
+    background-color: rgba(51, 51, 51, 0.9);
     position: fixed;
     top: 0;
     z-index: 1;
+    backdrop-filter: blur(10px);
 }
 .navbar h1{
     color: white;
@@ -61,14 +62,18 @@ body{
 }
 .card {
     width: 300px;
-    border: 1vh solid grey;
+    border: 1vh solid #333333;
     border-radius: 8px;
     margin: 20px;
     display: flex;
     flex-direction: column;
     flex: 0 0 calc(30% - 20px);
 }
-
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .card-content {
     padding: 15px;
     display: flex;
@@ -90,7 +95,7 @@ body{
 .buy-button {
     display: block;
     padding: 10px;
-    background-color: grey;
+    background-color: #333;
     color: white;
     text-align: center;
     text-decoration: none;
@@ -101,5 +106,24 @@ body{
 }
 
 .buy-button:hover {
-    background-color: rgb(68, 68, 68);
+    background-color: rgb(94, 93, 93);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20vh;
+}
+
+/* Stili per i link nel footer */
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
