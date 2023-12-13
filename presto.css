@@ -148,6 +148,7 @@ footer {
     text-align: center;
     margin-top: 20vh;
     width: 100%;
+    margin-bottom: 0.5vh;
 }
 
 /* Stili per i link nel footer */
@@ -184,6 +185,8 @@ footer a:hover {
     background-color: #333;
     margin: 1vw;
     border-radius: 5%;
+    color: white;
+    font-size: 3vh;
 }
 
 .filtro-title{
@@ -191,4 +194,10 @@ footer a:hover {
     font-size: 5vh;
     position: relative;
     top: 10vh;
+}
+
+.btn-cerca{
+    text-decoration: none;
+    color: white;
+    font-size: 15vh;
 }
