@@ -37,6 +37,7 @@ body{
     left: 87%;
     margin: 1vh;
     top: -2vh;
+    text-decoration: none;
 }
 
 .div-btn-registrati {
@@ -88,7 +89,7 @@ body{
     justify-content: space-around;
 }
 .card {
-    width: 30vw;
+    width: 25vw;
     height: 70vh;
     border: 1vh solid #333333;
     border-radius: 5%;
@@ -116,6 +117,7 @@ body{
     font-size: 3vh;
     color: white;
     font-weight: bolder;
+    height: 5vh;
 }
 
 .card-price {
@@ -124,8 +126,7 @@ body{
 }
 
 .buy-button {
-    display: block;
-    padding: 10px;
+    padding: 2vh;
     background-color: #333;
     color: white;
     text-align: center;
@@ -158,4 +159,36 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+
+.div-filtro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ricerca{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: space-around;
+    height: 70vh;
+    width: 80vw;
+}
+
+.filtro{
+    width: 30vw;
+    height: 20vh;
+    background-color: #333;
+    margin: 1vw;
+    border-radius: 5%;
+}
+
+.filtro-title{
+    color: white;
+    font-size: 5vh;
+    position: relative;
+    top: 10vh;
 }
