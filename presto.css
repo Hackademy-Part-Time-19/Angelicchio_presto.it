@@ -4,6 +4,10 @@ body{
     padding: 0;
     margin: 0;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .navbar {
     height: 10vh;
@@ -11,6 +15,7 @@ body{
     background-color: rgba(51, 51, 51, 0.9);
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 1;
     backdrop-filter: blur(10px);
 }
@@ -83,21 +88,22 @@ body{
     justify-content: space-around;
 }
 .card {
-    width: 300px;
+    width: 30vw;
+    height: 70vh;
     border: 1vh solid #333333;
     border-radius: 5%;
-    margin: 20px;
     display: flex;
     flex-direction: column;
-    flex: 0 0 calc(30% - 20px);
+    justify-content: center;
+    margin: 1vw;
 }
 .card-img {
     width: 100%;
-    height: 50vh;
+    height: 100%;
     object-fit: cover;
     border-top-right-radius: 5%;
     border-top-left-radius: 5%;
-    border-bottom: 1vh solid #333333;
+    border-bottom: 1vh solid #333333;;
 }
 .card-content {
     padding: 15px;
@@ -140,6 +146,7 @@ footer {
     padding: 20px;
     text-align: center;
     margin-top: 20vh;
+    width: 100%;
 }
 
 /* Stili per i link nel footer */
