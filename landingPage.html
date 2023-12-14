@@ -21,10 +21,33 @@
     <div class="div-filtro">
         <h1 class="filtro-title">Inizia la tua ricerca</h1>
         <div class="ricerca">
-            <div class="filtro">Tipologia</div>
-            <div class="filtro">Prezzo</div>
-            <div class="filtro">Nome</div>
-            <div class="filtro"><a href="./presto.html" class="btn-cerca">CERCA</a></div>
+            <div class="filtro">
+                <h6 class="title-filtri">CATEGORIA</h6>
+                <select name="categoria" id="inputCategoria" class="selezione">
+                    <option value="">Categoria</option>
+                    <option value="electronics">ELETTRONICA</option>
+                    <option value="jewelery">GIOIELLI</option>
+                    <option value="men's clothing">MODA UOMO</option>
+                    <option value="women's clothing">MODA DONNA</option>
+                </select>
+            </div>
+            <div class="filtro">
+                <h6 class="title-filtri">PREZZO</h6>
+                <select name="prezzo" id="inputPrezzo" class="selezione">
+                <option value="">Prezzo</option>
+                <option value="0-100">0-100 €</option>
+                <option value="100-200">100-200 €</option>
+                <option value="200-500">200-500 €</option>
+                <option value="500">MAGGIORE DI 500 €</option>
+                </select>
+            </div>
+            <div class="filtro">
+                <h6 class="title-filtri">NOME ARTICOLO</h6>
+                <input id="inputNome" type="text" placeholder="Articolo" class="articolo">
+            </div>
+            <div class="btn-cerca" onclick="cercaCatalogo()">
+                <h6 class="title-filtro-ricerca">Ricerca</h6>
+            </div>
         </div>
     </div>
 

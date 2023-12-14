@@ -180,13 +180,17 @@ footer a:hover {
 }
 
 .filtro{
-    width: 30vw;
-    height: 20vh;
+    height: 25vh;
+    width: 20vw;
+    margin-left: 30px;
     background-color: #333;
-    margin: 1vw;
-    border-radius: 5%;
-    color: white;
-    font-size: 3vh;
+    border-radius: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    padding-top: 10px;
+    padding-left: 10px;
+    flex-direction: column;
 }
 
 .filtro-title{
@@ -197,7 +201,47 @@ footer a:hover {
 }
 
 .btn-cerca{
-    text-decoration: none;
+    height: 25vh;
+    width: 20vw;
+    margin-left: 20px;
+    background-color: #303030;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+.selezione{
+    width: 95%;
+    height: 7vh;
+    border-radius: 10px;
+    border: none;
+    background-color:white;
+    color: black;
+    font-size: 19px;
+    font-weight: 900;
+    outline: none;
+}
+.articolo{
+    width: 95%;
+    height: 7vh;
+    border-radius: 10px;
+    border: none;
+    background-color:white;
+    color: black;
+    font-size: 14px;
+    font-weight: 700;
+    outline: none;
+    margin-bottom: 8px;
+}
+
+.title-filtri{
     color: white;
-    font-size: 15vh;
+    font-size: 2.5vh;
+}
+.title-filtro-ricerca{
+    color: white;
+    font-size: 5vh;
 }
