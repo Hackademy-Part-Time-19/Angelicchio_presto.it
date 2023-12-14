@@ -34,13 +34,21 @@ function injectCard(imgSrc, nomeProdotto, prezzoProd){
     divMain.appendChild(card);
 }
 
-function aggiungiProdotti(){
+function aggiungiProdotti(filtroCategoria, filtroPrezzo, filtroArticolo){
     fetch("https://fakestoreapi.com/products")
         .then((response) =>{return response.json()})
         .then(data => {
             let immagine;
             let prodotto;
             let prezzo;
+
+            let limiteInferiore = filtroPrezzo?.split("-")[0];
+            let limiteSuperiore = filtroPrezzo?.split("-")[1];
+
+            data = data.filter(function(prodotto){
+                return prodotto.category==filtroCategoria
+            })
+
             for(let i = 0; i<data.length; i++){
                 immagine = data[i].image;
                 prodotto = data[i].title;
@@ -53,11 +61,14 @@ function aggiungiProdotti(){
         })
 }
 
-function cercaCatalogo(){
-    let categoria = document.getElementById("inputCategoria").value;
-    let prezzo = document.getElementById("inputPrezzo").value;
-    let articolo = document.getElementById("inputArticolo").value;
-    window.location.href = "./presto.html"+"?filtroCategoria="+categoria+"&filtroPrezzo="+prezzo+"&filtroArticolo="+articolo;
-}
+window.addEventListener("load", (event) =>{
+    let url = new URL(window.location.href);
 
-aggiungiProdotti();
+    let filtroCategoria = url.searchParams.get("categoria");
+    let filtroPrezzo = url.searchParams.get("prezzo");
+    let filtroArticolo = url.searchParams.get("filtroArticolo");
+
+    aggiungiProdotti(filtroCategoria, filtroPrezzo, filtroArticolo);
+})
+
+
