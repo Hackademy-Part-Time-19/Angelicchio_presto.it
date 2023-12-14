@@ -39,21 +39,22 @@ function aggiungiProdotti(filtroCategoria, filtroPrezzo, filtroArticolo){
         .then((response) =>{return response.json()})
         .then(data => {
             let immagine;
-            let prodotto;
+            let articolo;
             let prezzo;
 
             let limiteInferiore = filtroPrezzo?.split("-")[0];
-            let limiteSuperiore = filtroPrezzo?.split("-")[1];
+            let limiteSuperiore = filtroPrezzo?.split("-")[1]; 
 
-            data = data.filter(function(prodotto){
-                return prodotto.category==filtroCategoria
+            data = data.filter(function (prodotto){
+                return prodotto.category==filtroCategoria && prodotto.title.startsWith(filtroArticolo)
+                && prodotto.price >= limiteInferiore && prodotto.price <= limiteSuperiore;   
             })
 
             for(let i = 0; i<data.length; i++){
                 immagine = data[i].image;
-                prodotto = data[i].title;
+                articolo = data[i].title;
                 prezzo = data[i].price;
-                injectCard(immagine, prodotto, prezzo);
+                injectCard(immagine, articolo, prezzo);
             }
         })
         .catch(error =>{
@@ -64,8 +65,8 @@ function aggiungiProdotti(filtroCategoria, filtroPrezzo, filtroArticolo){
 window.addEventListener("load", (event) =>{
     let url = new URL(window.location.href);
 
-    let filtroCategoria = url.searchParams.get("categoria");
-    let filtroPrezzo = url.searchParams.get("prezzo");
+    let filtroCategoria = url.searchParams.get("filtroCategoria");
+    let filtroPrezzo = url.searchParams.get("filtroPrezzo");
     let filtroArticolo = url.searchParams.get("filtroArticolo");
 
     aggiungiProdotti(filtroCategoria, filtroPrezzo, filtroArticolo);
