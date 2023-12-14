@@ -244,4 +244,10 @@ footer a:hover {
 .title-filtro-ricerca{
     color: white;
     font-size: 5vh;
+    transition: font-size 1s;
+}
+
+.title-filtro-ricerca:hover{
+    color: green;
+    font-size: 7vh; 
 }
