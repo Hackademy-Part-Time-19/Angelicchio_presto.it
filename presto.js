@@ -46,10 +46,11 @@ function aggiungiProdotti(filtroCategoria, filtroPrezzo, filtroArticolo){
             let limiteSuperiore = filtroPrezzo?.split("-")[1]; 
 
             data = data.filter(function (prodotto){
-                return prodotto.category==filtroCategoria && prodotto.title.startsWith(filtroArticolo)
-                && prodotto.price >= limiteInferiore && prodotto.price <= limiteSuperiore;   
+                return (filtroCategoria.length === 0 || prodotto.category === filtroCategoria) &&
+                (filtroArticolo.length === 0 || prodotto.title.startsWith(filtroArticolo)) &&
+                (filtroPrezzo.length === 0 || (prodotto.price >= limiteInferiore && prodotto.price <= limiteSuperiore));   
             })
-
+           
             for(let i = 0; i<data.length; i++){
                 immagine = data[i].image;
                 articolo = data[i].title;
