@@ -1,4 +1,3 @@
-let data;
 
 function injectCard(imgSrc, nomeProdotto, prezzoProd, index){
     var card = document.createElement('div');
@@ -24,7 +23,7 @@ function injectCard(imgSrc, nomeProdotto, prezzoProd, index){
     button.className = 'buy-button';
     button.textContent = 'Acquista ora';
     button.onclick = function(){
-        dettaglioProdotto(index);
+        dettaglioProdotto(imgSrc, nomeProdotto, prezzoProd);
     };
 
     cardContent.appendChild(prodotto);
@@ -67,17 +66,23 @@ function aggiungiProdotti(filtroCategoria, filtroPrezzo, filtroArticolo){
         })
 }
 
-window.addEventListener("load", (event) =>{
-    let url = new URL(window.location.href);
-
-    let filtroCategoria = url.searchParams.get("filtroCategoria");
-    let filtroPrezzo = url.searchParams.get("filtroPrezzo");
-    let filtroArticolo = url.searchParams.get("filtroArticolo");
-
-    aggiungiProdotti(filtroCategoria, filtroPrezzo, filtroArticolo);
-})
-
-function dettaglioProdotto(index){
-    window.location.href = "./prodotto.html"+"?indice="+index;
+function dettaglioProdotto(img, nome, prezzo){
+    window.location.href = "./prodotto.html"+"?articolo="+nome+"&prezzo="+prezzo+"&img="+img;
 }
 
+window.addEventListener("load", (event) =>{
+   if(window.location.href.includes("presto.html")){
+        let url = new URL(window.location.href);
+        let filtroCategoria = url.searchParams.get("filtroCategoria");
+        let filtroPrezzo = url.searchParams.get("filtroPrezzo");
+        let filtroArticolo = url.searchParams.get("filtroArticolo");
+
+    aggiungiProdotti(filtroCategoria, filtroPrezzo, filtroArticolo);
+   }
+   else if(window.location.href.includes("prodotto.html")){
+        let url = new URL(window.location.href);
+        let articolo = url.searchParams.get("articolo");
+        let prezzo = url.searchParams.get("prezzo");
+        let img = url.searchParams.get("img");
+   }
+})
