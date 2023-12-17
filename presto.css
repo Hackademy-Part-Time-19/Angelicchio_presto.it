@@ -30,6 +30,17 @@ body{
     font-size: 5vh;
     width: 0;
 }
+h1>a{
+    color: white;
+    margin: 0;
+    top: 2vh;
+    left: 3vh;
+    position: relative;
+    font-weight: bolder;
+    font-size: 5vh;
+    width: 0;
+}
+
 
 .navbar a {
     color: white;
