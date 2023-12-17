@@ -21,7 +21,7 @@ function injectCard(imgSrc, nomeProdotto, prezzoProd, index){
 
     var button = document.createElement('a');
     button.className = 'buy-button';
-    button.textContent = 'Acquista ora';
+    button.textContent = 'Dettagli';
     button.onclick = function(){
         dettaglioProdotto(imgSrc, nomeProdotto, prezzoProd);
     };
@@ -90,6 +90,9 @@ window.addEventListener("load", (event) =>{
         let articolo = url.searchParams.get("articolo");
         let prezzo = url.searchParams.get("prezzo");
         let img = url.searchParams.get("img");
+        document.getElementById("titolo").textContent = articolo;
+        document.getElementById("prezzo").textContent = prezzo;
+        document.getElementById("img").src = img;
    }
    else if(window.location.href.includes("landingPage.html")){
         document.getElementById("inputCategoria").value = '';
