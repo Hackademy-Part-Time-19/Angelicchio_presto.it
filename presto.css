@@ -30,15 +30,10 @@ body{
     font-size: 5vh;
     width: 0;
 }
-h1>a{
+.presto-nav{
     color: white;
-    margin: 0;
-    top: 2vh;
-    left: 3vh;
-    position: relative;
     font-weight: bolder;
     font-size: 5vh;
-    width: 0;
 }
 
 
@@ -314,4 +309,18 @@ footer a:hover {
 
 .buy-button-prodotto:hover {
     background-color: rgb(94, 93, 93);
+}
+
+.login {
+    width: 25vw;
+    height: 70vh;
+    border: 1vh solid rgb(94, 93, 93);
+    background-color: #333333;;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1vw;
+    position: relative;
+    top: 15vh;
 }
