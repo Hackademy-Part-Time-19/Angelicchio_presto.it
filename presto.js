@@ -1,4 +1,6 @@
-function injectCard(imgSrc, nomeProdotto, prezzoProd){
+let data;
+
+function injectCard(imgSrc, nomeProdotto, prezzoProd, index){
     var card = document.createElement('div');
     card.className = 'card';
 
@@ -21,7 +23,9 @@ function injectCard(imgSrc, nomeProdotto, prezzoProd){
     var button = document.createElement('a');
     button.className = 'buy-button';
     button.textContent = 'Acquista ora';
-    button.href = '#';
+    button.onclick = function(){
+        dettaglioProdotto(index);
+    };
 
     cardContent.appendChild(prodotto);
     cardContent.appendChild(prezzo);
@@ -50,12 +54,12 @@ function aggiungiProdotti(filtroCategoria, filtroPrezzo, filtroArticolo){
                 (filtroArticolo.length === 0 || prodotto.title.startsWith(filtroArticolo)) &&
                 (filtroPrezzo.length === 0 || (prodotto.price >= limiteInferiore && prodotto.price <= limiteSuperiore));   
             })
-           
+
             for(let i = 0; i<data.length; i++){
                 immagine = data[i].image;
                 articolo = data[i].title;
                 prezzo = data[i].price;
-                injectCard(immagine, articolo, prezzo);
+                injectCard(immagine, articolo, prezzo, i);
             }
         })
         .catch(error =>{
@@ -73,4 +77,7 @@ window.addEventListener("load", (event) =>{
     aggiungiProdotti(filtroCategoria, filtroPrezzo, filtroArticolo);
 })
 
+function dettaglioProdotto(index){
+    window.location.href = "./prodotto.html"+"?indice="+index;
+}
 
