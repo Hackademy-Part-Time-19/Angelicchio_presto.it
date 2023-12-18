@@ -330,6 +330,8 @@ footer a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    top: -7vh;
 }
 .div-password{
     color: white;
@@ -337,25 +339,32 @@ footer a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    top: -7vh;
 }
 .login-button{
     width: 70%;
-    height: 5vh;
+    height: 10vh;
     border: 1vh solid black;
     background-color: rgb(94, 93, 93);
     margin-left: 4vw;
     margin-top: 5vh;
     color: white;
     font-size: 2vh;
+    position: relative;
+    top: -5vh;
+    border-radius: 10%;
 }
 .login-button:hover{
     cursor: pointer;
 }
 .input-login{
     width: 70%;
-    margin-left: 3vw;
+    margin-left: 3.7vw;
     height: 5vh;
     font-size: 5vh;
+    position: relative;
+    top: -5vh;
 }
 .title-login{
     text-align: center;
